@@ -1,9 +1,9 @@
-name: fetch-jynneos-data
+name: fetch-jynneos-table
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 01,13 * * *' # runs at 6 am and 6 pm Pacific everyday 
+    - cron: '00 12 * * *' # runs at 8 AM Eastern Every Day
 
 jobs:
   build:
