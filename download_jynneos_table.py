@@ -19,3 +19,4 @@ df['Last Updated'] = last_updated_time
 
 # save to CSV
 df.to_csv(f'data/JYNNEOS_vaccine_distribution_{today_str}.csv', index = False)
+df.to_csv(f'data/JYNNEOS_vaccine_distribution_latest.csv', index = False)
