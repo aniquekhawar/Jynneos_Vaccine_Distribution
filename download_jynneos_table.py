@@ -14,6 +14,16 @@ replace_tuple = [('Total Requestedas', 'Total Requested as'), ('Total Shippedas'
 for old_text, new_text in replace_tuple:
     df.columns = df.columns.str.replace(old_text, new_text)
 
+# clean up data and dtypes
+df = df.replace('-', 0)
+cols = df.columns.tolist()
+for col in cols:
+    try:
+        df[col] = df[col].astype('int')
+    except:
+        print(f'Could not convert column {col} of dtype {df[col].dtype} to integer.')
+        continue
+
 # update last updated field
 df['Last Updated'] = last_updated_time
 
