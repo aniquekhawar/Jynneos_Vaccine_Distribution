@@ -10,7 +10,8 @@ url = 'https://aspr.hhs.gov/SNS/Pages/JYNNEOS-Distribution.aspx'
 df = pd.read_html(url)[0]
 
 # rename columns
-replace_tuple = [('Total Requestedas', 'Total Requested as'), ('Total Shippedas', 'Total Shipped as')]
+replace_tuple = [('Total Requestedas', 'Total Requested as'), ('Total Shippedas', 'Total Shipped as'),
+                 ('DosesAs', 'Doses As')]
 for old_text, new_text in replace_tuple:
     df.columns = df.columns.str.replace(old_text, new_text)
 
