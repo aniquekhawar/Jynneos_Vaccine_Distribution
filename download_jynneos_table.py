@@ -7,7 +7,7 @@ last_updated_time = today_timestamp.strftime('%Y-%m-%d %H:%M')
 
 # get data
 url = 'https://aspr.hhs.gov/SNS/Pages/JYNNEOS-Distribution.aspx'
-df = pd.read_html(url)[0]
+df = pd.read_html(url)[1]
 
 # rename columns
 replace_tuple = [('Total Requestedas', 'Total Requested as'), ('Total Shippedas', 'Total Shipped as'),
